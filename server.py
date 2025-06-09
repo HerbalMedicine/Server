@@ -31,7 +31,7 @@ def predict():
     img = Image.open(file.stream).convert('RGB')
     
     # Preprocesar la imagen como en el entrenamiento
-    img = img.resize((160, 160))  # Tamaño que usaste en entrenamiento
+    img = img.resize((224, 224))  # Tamaño que usaste en entrenamiento
     img = np.array(img).astype(np.float32) / 255.0  # Normalizar
     img = img.transpose(2, 0, 1)  # Convertir a (C, H, W)
     img = np.expand_dims(img, axis=0)  # (1, C, H, W)
